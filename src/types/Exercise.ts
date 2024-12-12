@@ -1,18 +1,3 @@
-export type ExerciseType =
-  | 'Core'
-  | 'Arms'
-  | 'Back'
-  | 'Chest'
-  | 'Legs'
-  | 'Shoulders'
-  | 'Olympic'
-  | 'Full body'
-  | 'Cardio';
+export type ExerciseType = 'Arms' | 'Chest' | 'Shoulders' | 'Cardio';
 
-export type ExerciseFormType =
-  | 'weightReps'
-  | 'reps'
-  | 'bodyWeight'
-  | 'time'
-  | 'distance'
-  | 'distanceTime';
+export type ExerciseFormType = 'weightReps' | 'reps' | 'bodyWeight' | 'time';
