@@ -14,6 +14,7 @@ export const data: Workout = {
         {
           name: 'Jump Rope',
           type: 'Cardio',
+
           formType: 'time',
           sets: [
             {

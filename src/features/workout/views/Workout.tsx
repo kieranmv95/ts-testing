@@ -1,18 +1,28 @@
-import { data } from '../data';
+'use client';
+
 import { Header, Section } from '../components';
+import { WorkoutStateProvider } from '../services/WorkoutState';
+import { useWorkoutStateContext } from '../hooks/useWorkoutContext';
 
-export const Workout = () => (
-  <>
-    <Header
-      title={data.title}
-      description={data.description}
-      categories={data.categories}
-    />
+const RenderSections = () => {
+  const {
+    data: { sections },
+  } = useWorkoutStateContext();
 
+  return (
     <div className="grid gap-4">
-      {data.sections.map((section) => (
+      {sections.map((section) => (
         <Section key={section.title} section={section} />
       ))}
     </div>
-  </>
-);
+  );
+};
+
+export const Workout = () => {
+  return (
+    <WorkoutStateProvider>
+      <Header />
+      <RenderSections />
+    </WorkoutStateProvider>
+  );
+};
