@@ -18,11 +18,9 @@ const RenderSections = () => {
   );
 };
 
-export const Workout = () => {
-  return (
-    <WorkoutStateProvider>
-      <Header />
-      <RenderSections />
-    </WorkoutStateProvider>
-  );
-};
+export const Workout = () => (
+  <WorkoutStateProvider>
+    <Header />
+    <RenderSections />
+  </WorkoutStateProvider>
+);
