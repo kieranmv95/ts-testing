@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'TS - Testing',
-  description: 'Te - Testing Description',
+  title: 'Home | TS',
+  description: 'TS Description',
 };
 
 export default function RootLayout({
@@ -13,7 +13,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className="bg-slate-900 text-white py-4">{children}</body>
     </html>
   );
 }
