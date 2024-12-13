@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { Input } from '@/components';
 import { CheckBox, CheckboxEnum } from '../Checkbox';
+import { useWorkoutStateContext } from '../../hooks/useWorkoutContext';
 
 type FormProps = {
   exerciseId: string;
@@ -23,10 +24,14 @@ export const TimeForm = ({ exerciseId, setIndex, time }: TimeProps) => {
     CheckboxEnum.unchecked
   );
 
+  const { values, updateValue } = useWorkoutStateContext();
+
   useEffect(() => {
-    // TODO: update this in state
-    console.log(`Update ${exerciseId} set:${setIndex + 1}`);
-    console.log(timeValue, rpeValue, checkBoxValue);
+    updateValue(exerciseId, setIndex, {
+      timeValue,
+      rpeValue,
+      checkBoxValue,
+    });
   }, [timeValue, rpeValue, checkBoxValue]);
 
   return (
