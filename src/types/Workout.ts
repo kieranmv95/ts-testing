@@ -1,6 +1,6 @@
 import type { ExerciseFormType, ExerciseType } from '@/types/Exercise';
 
-type WorkoutSet = {
+export type WorkoutSet = {
   repetitions?: number;
   time?: number | null;
   weight?: number | null;
