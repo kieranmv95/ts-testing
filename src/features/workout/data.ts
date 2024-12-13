@@ -12,6 +12,7 @@ export const data: Workout = {
         'Today is a heavy session so there is emphasis on warming up the areas we will be targeting',
       exercises: [
         {
+          id: 's1-jr-1',
           name: 'Jump Rope',
           type: 'Cardio',
 
@@ -23,6 +24,7 @@ export const data: Workout = {
           ],
         },
         {
+          id: 's1-pu-1',
           name: 'Push-ups',
           type: 'Chest',
           formType: 'bodyWeight',
@@ -34,6 +36,7 @@ export const data: Workout = {
           ],
         },
         {
+          id: 's1-bier-1',
           name: 'Banded Internal External Rotation',
           description: '1 rep = left and right part of movement',
           type: 'Chest',
@@ -45,6 +48,7 @@ export const data: Workout = {
           ],
         },
         {
+          id: 's1-bfp-1',
           name: 'Banded Face Pulls',
           type: 'Arms',
           formType: 'reps',
@@ -55,6 +59,7 @@ export const data: Workout = {
           ],
         },
         {
+          id: 's1-pu-2',
           name: 'Push-ups',
           type: 'Chest',
           formType: 'bodyWeight',
@@ -66,6 +71,7 @@ export const data: Workout = {
           ],
         },
         {
+          id: 's1-dw-1',
           name: 'Doorway Pec Stretch',
           description: 'repeat time for each side',
           type: 'Chest',
@@ -82,6 +88,7 @@ export const data: Workout = {
       title: 'Primary Lifts',
       exercises: [
         {
+          id: 's2ibp-1',
           name: 'Incline Bench Pres',
           type: 'Chest',
           description:
@@ -103,6 +110,7 @@ export const data: Workout = {
           ],
         },
         {
+          id: 's2-pp-1',
           name: 'Push Press',
           type: 'Chest',
           description: 'rest 2 minutes between sets',
@@ -148,6 +156,7 @@ export const data: Workout = {
       title: 'Accessory Work',
       exercises: [
         {
+          id: 's3-sdn-1',
           name: 'Standing Dumbbell Overhead Press',
           type: 'Shoulders',
           formType: 'weightReps',
@@ -167,6 +176,7 @@ export const data: Workout = {
           ],
         },
         {
+          id: 's3-efcv-1',
           name: 'Rolling Dumbbell Skull Crushers',
           type: 'Arms',
           formType: 'weightReps',
@@ -186,6 +196,7 @@ export const data: Workout = {
           ],
         },
         {
+          id: 's3-wefwv-1',
           name: 'Meadows 6 Way Shoulder Raise',
           type: 'Shoulders',
           formType: 'weightReps',
@@ -205,6 +216,7 @@ export const data: Workout = {
           ],
         },
         {
+          id: 's3-lkjh-1',
           name: 'Standing Single Arm Overhead Tricep Extension',
           type: 'Arms',
           description: '1 rep = left and right part of movement',
@@ -225,6 +237,7 @@ export const data: Workout = {
           ],
         },
         {
+          id: 's3-w12f-v1',
           name: 'Standing Single Arm Overhead Tricep Extension',
           type: 'Arms',
           description: 'Try and complete in as few sets as possible',

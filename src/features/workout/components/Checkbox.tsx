@@ -10,7 +10,11 @@ export enum CheckboxEnum {
   fail,
 }
 
-export const CheckBox = () => {
+export type CheckBoxProps = {
+  onChange: (t: CheckboxEnum) => void;
+};
+
+export const CheckBox = ({ onChange }: CheckBoxProps) => {
   const [checkBoxStatus, setCheckBoxStatus] = useState<CheckboxEnum>(
     CheckboxEnum.unchecked
   );
@@ -29,12 +33,16 @@ export const CheckBox = () => {
   const getNextStatus = () => {
     switch (checkBoxStatus) {
       case CheckboxEnum.unchecked:
+        onChange(CheckboxEnum.success);
         return CheckboxEnum.success;
       case CheckboxEnum.success:
+        onChange(CheckboxEnum.fail);
         return CheckboxEnum.fail;
       case CheckboxEnum.fail:
+        onChange(CheckboxEnum.unchecked);
         return CheckboxEnum.unchecked;
       default:
+        onChange(CheckboxEnum.unchecked);
         return CheckboxEnum.unchecked;
     }
   };

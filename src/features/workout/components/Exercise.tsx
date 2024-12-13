@@ -23,23 +23,34 @@ export const Exercise = ({ exercise }: ExerciseProps) => (
         <div key={i.toString()}>
           {exercise.formType === 'weightReps' && (
             <WeightAndRepsForm
+              exerciseId={exercise.id}
               set={i}
               weight={set.weight}
               repetitions={set.repetitions}
             />
           )}
           {exercise.formType === 'reps' && (
-            <RepsForm set={i} repetitions={set.repetitions} />
+            <RepsForm
+              exerciseId={exercise.id}
+              set={i}
+              repetitions={set.repetitions}
+            />
           )}
           {exercise.formType === 'bodyWeight' && (
             <WeightAndRepsForm
+              exerciseId={exercise.id}
               set={i}
               repetitions={set.repetitions}
               weight={set.weight}
             />
           )}
           {exercise.formType === 'time' && (
-            <TimeForm key={i.toString()} set={i} time={set.time} />
+            <TimeForm
+              exerciseId={exercise.id}
+              key={i.toString()}
+              set={i}
+              time={set.time}
+            />
           )}
         </div>
       ))}

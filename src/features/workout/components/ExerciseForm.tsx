@@ -1,10 +1,11 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Input } from '@/components';
-import { CheckBox } from './Checkbox';
+import { CheckBox, CheckboxEnum } from './Checkbox';
 
 type FormProps = {
+  exerciseId: string;
   set: number;
 };
 
@@ -12,11 +13,21 @@ type TimeFormProps = FormProps & {
   time?: number | null;
 };
 
-export const TimeForm = ({ set, time }: TimeFormProps) => {
+export const TimeForm = ({ exerciseId, set, time }: TimeFormProps) => {
   const [timeValue, setTimeValue] = useState<string>(
     time ? time.toString() : ''
   );
   const [rpeValue, setRpeValue] = useState<string>('');
+
+  const [checkBoxValue, setCheckBoxValue] = useState<CheckboxEnum>(
+    CheckboxEnum.unchecked
+  );
+
+  useEffect(() => {
+    // TODO: update this in state
+    console.log(`Update ${exerciseId} set:${set + 1}`);
+    console.log(timeValue, rpeValue, checkBoxValue);
+  }, [timeValue, rpeValue, checkBoxValue]);
 
   return (
     <div className="grid gap-2 grid-cols-[24px_1fr_52px_36px]">
@@ -34,7 +45,7 @@ export const TimeForm = ({ set, time }: TimeFormProps) => {
         value={rpeValue}
         onChange={(e) => setRpeValue(e.target.value)}
       />
-      <CheckBox />
+      <CheckBox onChange={(e) => setCheckBoxValue(e)} />
     </div>
   );
 };
@@ -45,6 +56,7 @@ type WeightAndRepsFormProps = FormProps & {
 };
 
 export const WeightAndRepsForm = ({
+  exerciseId,
   set,
   weight,
   repetitions,
@@ -56,6 +68,16 @@ export const WeightAndRepsForm = ({
     repetitions ? repetitions.toString() : ''
   );
   const [rpeValue, setRpeValue] = useState<string>('');
+
+  const [checkBoxValue, setCheckBoxValue] = useState<CheckboxEnum>(
+    CheckboxEnum.unchecked
+  );
+
+  useEffect(() => {
+    // TODO: update this in state
+    console.log(`Update ${exerciseId} set:${set + 1}`);
+    console.log(repetitionsValue, weightValue, checkBoxValue);
+  }, [repetitionsValue, weightValue, checkBoxValue]);
 
   return (
     <div className="grid gap-2 grid-cols-[24px_1fr_68px_52px_36px]">
@@ -78,7 +100,7 @@ export const WeightAndRepsForm = ({
         value={rpeValue}
         onChange={(e) => setRpeValue(e.target.value)}
       />
-      <CheckBox />
+      <CheckBox onChange={(e) => setCheckBoxValue(e)} />
     </div>
   );
 };
@@ -87,11 +109,20 @@ type RepsFormProps = FormProps & {
   repetitions?: number | null;
 };
 
-export const RepsForm = ({ set, repetitions }: RepsFormProps) => {
+export const RepsForm = ({ exerciseId, set, repetitions }: RepsFormProps) => {
   const [repsValue, setRepsValue] = useState<string>(
     repetitions ? repetitions.toString() : ''
   );
   const [rpeValue, setRpeValue] = useState<string>('');
+  const [checkBoxValue, setCheckBoxValue] = useState<CheckboxEnum>(
+    CheckboxEnum.unchecked
+  );
+
+  useEffect(() => {
+    // TODO: update this in state
+    console.log(`Update ${exerciseId} set:${set + 1}`);
+    console.log(repsValue, rpeValue, checkBoxValue);
+  }, [repsValue, rpeValue]);
 
   return (
     <div className="grid gap-2 grid-cols-[24px_1fr_52px_36px]">
@@ -109,7 +140,7 @@ export const RepsForm = ({ set, repetitions }: RepsFormProps) => {
         value={rpeValue}
         onChange={(e) => setRpeValue(e.target.value)}
       />
-      <CheckBox />
+      <CheckBox onChange={(e) => setCheckBoxValue(e)} />
     </div>
   );
 };

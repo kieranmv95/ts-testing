@@ -7,6 +7,7 @@ type WorkoutSet = {
 };
 
 export type WorkoutExercise = {
+  id: string;
   name: string;
   description?: string;
   type: ExerciseType;
